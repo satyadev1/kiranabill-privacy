@@ -1,0 +1,161 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>KiranaBill Privacy Policy</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+  /* Layout: single reading column with a summary table up top, then numbered-free plain sections. */
+  :root {
+    --bg: #f7f9fa;
+    --surface: #ffffff;
+    --fg: #14212b;
+    --muted: #55656f;
+    --line: #dbe2e6;
+    --accent: #0b6b5d;
+    --accent-soft: #e3f2ef;
+    --font-body: "IBM Plex Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+    --font-mono: "IBM Plex Mono", ui-monospace, Menlo, monospace;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #0f171c; --surface: #162229; --fg: #e6edf0; --muted: #98a9b2;
+      --line: #27363e; --accent: #5fd0bd; --accent-soft: #15302d;
+      color-scheme: dark;
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg: #0f171c; --surface: #162229; --fg: #e6edf0; --muted: #98a9b2;
+    --line: #27363e; --accent: #5fd0bd; --accent-soft: #15302d;
+    color-scheme: dark;
+  }
+  body {
+    background: var(--bg); color: var(--fg);
+    font-family: var(--font-body); font-size: 16px; line-height: 1.65;
+    padding-block: 40px 64px;
+    padding-left: max(16px, env(safe-area-inset-left, 0px));
+    padding-right: max(16px, env(safe-area-inset-right, 0px));
+  }
+  main { max-width: 700px; margin: 0 auto; display: flex; flex-direction: column; gap: 36px; }
+  header { display: flex; flex-direction: column; gap: 10px; }
+  .eyebrow { font-family: var(--font-mono); font-size: 12px; letter-spacing: .08em; text-transform: uppercase; color: var(--accent); }
+  h1 { font-size: clamp(28px, 6vw, 38px); line-height: 1.15; margin: 0; font-weight: 600; text-wrap: balance; }
+  .meta { color: var(--muted); font-size: 14px; margin: 0; }
+  h2 { font-size: 20px; margin: 0 0 8px; font-weight: 600; text-wrap: balance; }
+  p { margin: 0 0 12px; }
+  p:last-child { margin-bottom: 0; }
+  ul { margin: 0 0 12px; padding-left: 20px; display: flex; flex-direction: column; gap: 6px; }
+  section { min-width: 0; }
+  .summary { background: var(--accent-soft); border-radius: 6px; padding: 18px 20px; }
+  .summary h2 { font-size: 15px; font-family: var(--font-mono); font-weight: 500; letter-spacing: .04em; text-transform: uppercase; color: var(--accent); }
+  .summary ul { margin: 0; }
+  .table-wrap { overflow-x: auto; border: 1px solid var(--line); border-radius: 6px; background: var(--surface); }
+  table { border-collapse: collapse; width: 100%; min-width: 520px; font-size: 14.5px; }
+  th, td { text-align: left; vertical-align: top; padding: 10px 14px; border-bottom: 1px solid var(--line); }
+  th { font-family: var(--font-mono); font-size: 12px; font-weight: 500; letter-spacing: .06em; text-transform: uppercase; color: var(--muted); }
+  tr:last-child td { border-bottom: 0; }
+  code { font-family: var(--font-mono); font-size: .9em; background: var(--surface); border: 1px solid var(--line); padding: 1px 5px; border-radius: 4px; }
+  a { color: var(--accent); }
+  a:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+  footer { border-top: 1px solid var(--line); padding-top: 18px; color: var(--muted); font-size: 14px; }
+</style>
+
+</head>
+<body>
+<main>
+  <header>
+    <span class="eyebrow">KiranaBill for Android</span>
+    <h1>Privacy Policy</h1>
+    <p class="meta">Effective 21 October 2026 &middot; Developer: Satyadev K</p>
+  </header>
+
+  <section class="summary">
+    <h2>In short</h2>
+    <ul>
+      <li>Your bills, catalog, prices and customer details are stored on your phone. We do not run a server and do not receive them.</li>
+      <li>When you scan a handwritten chit, the photo is sent to Google's Gemini API to read the items. That is the only data that leaves your phone.</li>
+      <li>There are no accounts, no ads, no analytics and no tracking in the app.</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>What the app handles</h2>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Data</th><th>Why</th><th>Where it goes</th></tr></thead>
+        <tbody>
+          <tr><td>Photo of a chit (camera or gallery)</td><td>To read the items on the chit</td><td>Sent to Google Gemini API; also held in app memory while you work</td></tr>
+          <tr><td>Items, quantities, prices, units</td><td>To build the bill</td><td>Stored on your phone</td></tr>
+          <tr><td>Customer name and phone number, if you enter them or they are on the chit</td><td>To put on the bill and show in history</td><td>Stored on your phone</td></tr>
+          <tr><td>Saved bills, catalog and shop name</td><td>History, repeat pricing, receipts</td><td>Stored on your phone</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section>
+    <h2>Photos and Google Gemini</h2>
+    <p>When you take or choose a photo of a chit, the app resizes it and sends it, with a text instruction, to the Google Gemini API (<code>generativelanguage.googleapis.com</code>) over an encrypted connection. Gemini returns the list of items it read. The app does not send anything else with the photo, and it does not send your saved bills, catalog or history.</p>
+    <p>Anything written on the chit is part of the photo. If a chit shows a customer name or phone number, that text goes to Google along with the rest of the image. Google handles it under its own terms and privacy policy, which depend on the Gemini API plan in use: <a href="https://ai.google.dev/gemini-api/terms" target="_blank" rel="noopener">ai.google.dev/gemini-api/terms</a> and <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">policies.google.com/privacy</a>.</p>
+    <p>The app does not keep a copy of the photo after you close the scan, other than what Android keeps for your own camera or gallery.</p>
+  </section>
+
+  <section>
+    <h2>Data stored on your phone</h2>
+    <p>Bills, catalog items and settings are saved in a private database inside the app. Other apps cannot read it. Uninstalling KiranaBill, or clearing its storage in Android settings, deletes it.</p>
+    <p>The app allows Android's standard backup. If you have device backup turned on, Android may include the app's data in your Google backup. That is controlled by your device and Google account settings, not by us.</p>
+  </section>
+
+  <section>
+    <h2>Permissions</h2>
+    <ul>
+      <li><strong>Camera:</strong> to photograph a chit. Optional. You can choose a photo from your gallery instead.</li>
+      <li><strong>Internet:</strong> to send the chit photo to Google Gemini. Without it, scanning does not work, and you can still add items by hand.</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Sharing bills</h2>
+    <p>When you share or print a bill, the app creates a file or message and hands it to the app you pick, such as WhatsApp or a PDF viewer. What that app does with it is covered by its own privacy policy. KiranaBill does not send bills anywhere on its own.</p>
+  </section>
+
+  <section>
+    <h2>What we do not do</h2>
+    <ul>
+      <li>We do not sell or share your data.</li>
+      <li>We do not collect your location, contacts, or device identifiers.</li>
+      <li>We do not show ads or use analytics or crash-reporting services.</li>
+      <li>We do not have an account system or a server holding your data.</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Your customers' information</h2>
+    <p>If you enter customer names or phone numbers, you are responsible for having a reason to keep them and for using them lawfully. You can edit or delete any saved bill in the app.</p>
+  </section>
+
+  <section>
+    <h2>Children</h2>
+    <p>KiranaBill is a tool for shop owners and is not directed at children under 13. We do not knowingly collect information from children.</p>
+  </section>
+
+  <section>
+    <h2>Deleting your data</h2>
+    <p>Delete individual bills inside the app, or remove everything by uninstalling the app or clearing its storage. Because we hold no copy of your bills, there is nothing to delete on our side. To ask Google about photos sent to Gemini, use the Google links above.</p>
+  </section>
+
+  <section>
+    <h2>Changes to this policy</h2>
+    <p>If the app changes in a way that affects your data, such as adding accounts or cloud backup, this page will be updated and the effective date above will change.</p>
+  </section>
+
+  <section>
+    <h2>Contact</h2>
+    <p>Questions about this policy: <strong>Komaragirisatyadev1007@gmail.com</strong></p>
+  </section>
+
+  <footer>KiranaBill Privacy Policy &middot; Effective 21 October 2026</footer>
+</main>
+</body>
+</html>
